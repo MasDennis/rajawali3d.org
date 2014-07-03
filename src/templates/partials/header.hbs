@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{{#if this.page.data.title }}{{ this.page.data.title }} - {{/if}}Rajawali3d</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
+
+    <meta name="description" content="Ideas and innovation company" />
+    <meta name="keywords" content="Rajawali, Rajawali3d, 3d, Android, Library, Open source, OpenGL ES {{#if this.page.data.title }}, {{ this.page.data.title }}{{/if}}" />
+
+    <meta property="og:title" content="{{#if this.page.data.title }}{{ this.page.data.title }} - {{/if}}Rajawali3d" />
+    <meta property="og:description" content="Rajawali3d - The open source 3D engine for the Android platform" />
+    <meta property="og:image" content="" />
+
+    <meta name="robots" content="NOODP" />
+
+    <link rel="publisher" href="https://plus.google.com/communities/116529974266844528013"/>
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
+    <!-- build:css /assets/css/main.min.css -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <!-- endbuild -->
+	{{#if this.page.data.css}}
+        <link rel="stylesheet" href="{{ this.page.data.css }}">
+	{{/if}}
+
+    <!-- build:js /assets/js/modernizr.min.js -->
+    <script src="/assets/js/modernizr.js"></script>
+    <!-- endbuild -->
+
+	{{#if this.page.data.video}}
+        <script src="/assets/js/vendors/jwplayer.js"></script>
+	{{/if}}
+
+    <!--[if lt IE 9]>
+        <!-- build:js /assets/js/ie8.min.js -->
+    <script src="/assets/js/vendors/respond.js"></script>
+    <!-- endbuild -->
+    <![endif]-->
+
+</head>
+
+<body class="section-{{ chain "lowercase" "hyphenate" this.page.data.section }} page-{{ chain "lowercase" "hyphenate" this.page.data.page }}">
+

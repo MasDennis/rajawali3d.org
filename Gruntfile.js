@@ -11,7 +11,7 @@ var PATHS = {
     FONTS: 'assets/fonts/',
     JS: 'js/',
     SASS: 'sass/',
-    ASSEMBLE: 'templates/',
+    TEMPLATES: 'templates/',
     CONTENT: 'content/'
 };
 
@@ -26,10 +26,10 @@ module.exports = function (grunt) {
         assemble: {
             options: {
                 data: PATHS.SRC + PATHS.CONTENT + 'data/*.json',
-                helpers: PATHS.SRC + PATHS.ASSEMBLE + 'helpers/**/*.js',
+                helpers: PATHS.SRC + PATHS.TEMPLATES + 'helpers/**/*.js',
                 layout: 'index.hbs',
-                layoutdir: PATHS.SRC + PATHS.ASSEMBLE +  'layouts/',
-                partials: PATHS.SRC + PATHS.ASSEMBLE + 'partials/**/*.hbs'
+                layoutdir: PATHS.SRC + PATHS.TEMPLATES +  'layouts/',
+                partials: PATHS.SRC + PATHS.TEMPLATES + 'partials/**/*.hbs'
             },
             posts: {
                 options: {
@@ -218,7 +218,7 @@ module.exports = function (grunt) {
             },
             assemble: {
                 files: [{
-                    cwd: PATHS.SRC + PATHS.ASSEMBLE + 'helpers/',
+                    cwd: PATHS.SRC + PATHS.TEMPLATES + 'helpers/',
                     expand: true,
                     src: '**/*.js'
                 }]
@@ -274,12 +274,12 @@ module.exports = function (grunt) {
             },
             assemble: {
                 expand: true,
-                files: [PATHS.SRC + PATHS.ASSEMBLE + '**/*.hbs', PATHS.SRC + PATHS.CONTENT + '**/*.hbs'],
+                files: [PATHS.SRC + PATHS.TEMPLATES + '**/*.hbs', PATHS.SRC + PATHS.CONTENT + '**/*.hbs'],
                 tasks: 'newer:assemble'
             },
             assembleHelpers: {
                 expand: true,
-                files: [PATHS.SRC + PATHS.ASSEMBLE + 'helpers/**/*.js'],
+                files: [PATHS.SRC + PATHS.TEMPLATES + 'helpers/**/*.js'],
                 tasks: ['newer:jshint:assemble', 'newer:assemble']
             },
             contentCss: {
