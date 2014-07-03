@@ -1,0 +1,23 @@
+
+
+.navigation-panel,
+.lickforit-logo {
+    display: none;
+}
+
+.content-section-center {
+	position: relative;
+    text-transform: uppercase;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0;
+    max-width: 1024px;
+    min-width: $min-width;
+    overflow: hidden;
+
+    html[lang=gr] & {
+        text-transform: none;
+    }
+}

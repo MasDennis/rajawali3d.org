@@ -1,0 +1,107 @@
+html {
+    min-height: 100%;
+
+}
+html,body {
+    width: 100%;
+
+}
+
+body {
+  @include linear-gradient(#cbcdcf, #dedfe0 200px, #fff 500px);
+  @include ie-gradient(#dedfe0, #fffffe);
+}
+
+#ng-app{
+
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.app-container {
+
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 100%;
+    max-width: 1024px;
+    min-width: $min-width;
+    box-shadow: 0 0 25px gray;
+
+    @include image-rendering();
+
+    .preload &,
+    .intro &{
+      min-height: 1200px;
+    }
+
+}
+
+.wrp{
+    min-height: 100%;
+    margin-bottom: -$footer-height;
+    &:after{
+        content: "";
+        display: block;
+        height: $footer-height;
+    }
+}
+
+
+.lickforit-logo {
+  width: 336px;
+  height: 218px;
+  display: block;
+  position: absolute;
+  top: 0;
+  background: url( $image_path + "global/lickforit_logo.png") no-repeat;
+}
+
+.no-select {
+    @include user-select();
+}
+
+.button{
+  display: inline-block;
+  min-height: 50px;
+  min-width: 140px;
+  margin: 0 3px;
+  padding: 16px 33px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  border-radius: 15px;
+  opacity: 1;
+  font-family: 'PlutoRegular';
+  font-weight: normal;
+  font-size: 18px;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  @include box-sizing(border-box);
+  @include transition(opacity .2s linear);
+  @include linear-gradient(#860006,#e60000);
+  &.secondary{
+    @include linear-gradient(#19479d,#41c3f4);
+  }
+  &:hover{
+    opacity: .8;
+  }
+
+    html[lang=gr] & {
+        text-transform: none;
+    }
+}
+
+.buttonrow{
+  text-align: center;
+  padding: 0;
+  .message{
+    margin: 35px auto;
+    color: gray;
+  }
+}
