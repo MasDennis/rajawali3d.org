@@ -33,11 +33,7 @@ module.exports = function (grunt) {
             },
             posts: {
                 options: {
-                    collections: [{
-                        name: 'post',
-                        sortby: 'posted',
-                        sortorder: 'descending'
-                    }]
+
                 },
                 files: [{
                     cwd: PATHS.SRC + PATHS.CONTENT,

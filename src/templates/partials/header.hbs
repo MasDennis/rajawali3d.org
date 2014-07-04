@@ -31,17 +31,25 @@
     <script src="/assets/js/modernizr.js"></script>
     <!-- endbuild -->
 
-	{{#if this.page.data.video}}
-        <script src="/assets/js/vendors/jwplayer.js"></script>
-	{{/if}}
-
-    <!--[if lt IE 9]>
-        <!-- build:js /assets/js/ie8.min.js -->
-    <script src="/assets/js/vendors/respond.js"></script>
-    <!-- endbuild -->
-    <![endif]-->
-
 </head>
 
-<body class="section-{{ chain "lowercase" "hyphenate" this.page.data.section }} page-{{ chain "lowercase" "hyphenate" this.page.data.page }}">
+<body>
+
+	<header class="header">
+		<h1>
+			<a href="/">Rajawali3d</a>
+		</h1>
+        <nav class="nav">
+            <a href="#navigation" class="mobile-nav">Navigation</a>
+            <ul>
+                <li><a href="/news/"{{#is this.page.data.section 'News'}} class="selected"{{/is}}>NEWS</a></li>
+                <li><a href="/features/"{{#is this.page.data.section 'Features'}} class="selected"{{/is}}>FEATURES</a></li>
+                <li><a href="/getting-started/"{{#is this.page.data.section 'Getting Started'}} class="selected"{{/is}}>GETTING STARTED</a></li>
+                <li><a href="/download/"{{#is this.page.data.section 'Download'}} class="selected"{{/is}}>DOWNLOAD</a></li>
+                <li><a href="/showcase/"{{#is this.page.data.section 'Showcase'}} class="selected"{{/is}}>SHOWCASE</a></li>
+                <li><a href="/get-involved/"{{#is this.page.data.section 'Get Involved'}} class="selected"{{/is}}>GET INVOLVED</a></li>
+                <li><a href="/donate/"{{#is this.page.data.section 'Donate'}} class="selected"{{/is}}>DONATE</a></li>
+            </ul>
+        </nav>
+	</header>
 
