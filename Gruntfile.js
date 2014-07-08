@@ -12,6 +12,7 @@ var PATHS = {
     JS: 'js/',
     SASS: 'sass/',
     TEMPLATES: 'templates/',
+    JS_VENDOR: './src/js/vendor/',
     CONTENT: 'content/'
 };
 
@@ -261,6 +262,17 @@ module.exports = function (grunt) {
             html: PATHS.DEST + 'index.html',
             options: {
                 root: PATHS.DEST
+            }
+        },
+
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: "path/to/base",
+                    mainConfigFile: "path/to/config.js",
+                    name: PATHS.JS_VENDOR + 'almond.js', 
+                    out: PATHS.DEST + 'assets/js/app.js'
+                }
             }
         },
 
