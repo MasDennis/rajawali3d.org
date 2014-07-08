@@ -1,7 +1,5 @@
-//GRID
 
-$WRAPPER_PADDING : 30px;
-$CONTENT_MAX_WIDTH  : 1060 - $WRAPPER_PADDING;
+$OUTER_PADDING : 30px;
 
 $min-width: 320px;
 $max-width: 1024px;
@@ -20,8 +18,5 @@ $colour_red: #e30330;
 $colour_darkgrey: #88898a;
 
 $image_path: "../img/";
-$lickrace_sprite : $image_path + 'lickrace/sprite.png';
 
-$global_font_black : 'plutoblack';
 
-$module_path : "../../app/modules/";
