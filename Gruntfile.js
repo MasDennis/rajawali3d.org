@@ -266,12 +266,25 @@ module.exports = function (grunt) {
         },
 
         requirejs: {
-            compile: {
+            dev: {
+
+                options: {
+                    baseUrl: PATHS.SRC + PATHS.JS + 'modules/',
+                    include: 'requirejs',
+                    name: 'app',
+                    dir: PATHS.DEST + 'assets/js/',
+
+                    optimize: 'none' /* Pick uglify, uglify2 or 'none' */
+                }
+
+            },
+            build: {
                 options: {
                     baseUrl: "path/to/base",
                     mainConfigFile: "path/to/config.js",
-                    name: PATHS.JS_VENDOR + 'almond.js', 
-                    out: PATHS.DEST + 'assets/js/app.js'
+                    name: 'app.min',
+                    out: PATHS.DEST + 'assets/js/app.js',
+                    optimize: 'uglify2'
                 }
             }
         },
@@ -336,7 +349,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('content', ['assemble', 'autoprefixer:content', 'copy:contentImage', 'copy:content']);
 
-    grunt.registerTask('build', ['clean:dist', 'styles', 'fonts', 'root', 'images', 'scripts', 'content']);
+    grunt.registerTask('build', ['clean:dist', 'styles', 'fonts', 'root', 'images', 'scripts', 'content','requirejs:dev']);
     grunt.registerTask('run', ['connect', 'watch']);
     grunt.registerTask('compress', ['useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'clean:useminTidy', 'copy:vendorScripts', 'htmlmin']);
 
