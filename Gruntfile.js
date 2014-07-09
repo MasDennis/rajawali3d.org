@@ -264,27 +264,17 @@ module.exports = function (grunt) {
                 root: PATHS.DEST
             }
         },
-
-        requirejs: {
-            dev: {
-
+        'sails-linker': {
+            defaultOptions: {
                 options: {
-                    baseUrl: PATHS.SRC + PATHS.JS + 'modules/',
-                    include: 'requirejs',
-                    name: 'app',
-                    dir: PATHS.DEST + 'assets/js/',
-
-                    optimize: 'none' /* Pick uglify, uglify2 or 'none' */
-                }
-
-            },
-            build: {
-                options: {
-                    baseUrl: "path/to/base",
-                    mainConfigFile: "path/to/config.js",
-                    name: 'app.min',
-                    out: PATHS.DEST + 'assets/js/app.js',
-                    optimize: 'uglify2'
+                    startTag: '<!--SCRIPTS-->',
+                    endTag: '<!--SCRIPTS END-->',
+                    fileTmpl: '<script src="%s"></script>',
+                    appRoot: 'app/'
+                },
+                files: {
+                    // Target-specific file lists and/or options go here.
+                    'app/index.html': ['app/scripts/**/*.js']
                 }
             }
         },
