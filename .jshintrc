@@ -14,5 +14,7 @@
     "sub": true,
     "trailing": true,
     "unused": true,
-    "white": true
+    "white": true,
+    "esnext": true
+
 }

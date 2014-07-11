@@ -202,9 +202,10 @@ module.exports = function (grunt) {
         /* javascript hinting */
         jshint: {
             options: {
-                force: false,
+                force: true,
                 jshintrc:  './.jshintrc',
-                reporter: require('jshint-stylish')
+                reporter: require('jshint-stylish'),
+
             },
             site: {
                 files: [{
@@ -264,17 +265,22 @@ module.exports = function (grunt) {
                 root: PATHS.DEST
             }
         },
-        'sails-linker': {
-            defaultOptions: {
-                options: {
-                    startTag: '<!--SCRIPTS-->',
-                    endTag: '<!--SCRIPTS END-->',
-                    fileTmpl: '<script src="%s"></script>',
-                    appRoot: 'app/'
-                },
+
+
+
+        browserify: {
+            dev: {
                 files: {
-                    // Target-specific file lists and/or options go here.
-                    'app/index.html': ['app/scripts/**/*.js']
+                    './dist/assets/js/app.js': ["./src/js/modules/app.js"]
+                },
+                options: {
+
+                    transform: ["browserify-shim"],
+                    watch: true,
+                    bundleOptions: {
+                        debug:true
+                    }
+
                 }
             }
         },
@@ -317,12 +323,8 @@ module.exports = function (grunt) {
                 expand: true,
                 files: PATHS.SRC + PATHS.SASS + '**/*.scss',
                 tasks: ['styles']
-            },
-            scripts: {
-                expand: true,
-                files: PATHS.SRC + PATHS.JS + '**/*.js',
-                tasks: ['scripts']
             }
+
         }
 
     });
@@ -335,11 +337,11 @@ module.exports = function (grunt) {
     grunt.registerTask('images', ['copy:image']);
 
     grunt.registerTask('styles', ['sass', 'autoprefixer:site']);
-    grunt.registerTask('scripts', ['jshint', 'copy:scripts']);
+    grunt.registerTask('scripts', ['jshint']);
 
     grunt.registerTask('content', ['assemble', 'autoprefixer:content', 'copy:contentImage', 'copy:content']);
 
-    grunt.registerTask('build', ['clean:dist', 'styles', 'fonts', 'root', 'images', 'scripts', 'content','requirejs:dev']);
+    grunt.registerTask('build', ['clean:dist', 'styles', 'fonts', 'root', 'images', 'scripts', 'content','browserify:dev']);
     grunt.registerTask('run', ['connect', 'watch']);
     grunt.registerTask('compress', ['useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'clean:useminTidy', 'copy:vendorScripts', 'htmlmin']);
 

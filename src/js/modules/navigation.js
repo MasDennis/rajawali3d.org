@@ -1,10 +1,10 @@
-class Navigation {
+var Navigation = function() {
 
-	constructor() {
+    'use strict';
 
-	}
-}
+    this.init  = function() {
+        console.log('nav;')
+    }
+};
 
-module.exports = function() {
-	return new Navigation();
-}
+module.exports = Navigation;
