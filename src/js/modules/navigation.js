@@ -1,15 +1,10 @@
-rajawali.navigation = (function() {
-    'use strict';
+class Navigation {
 
-    /**
-     *
-     * @Public
-     * @type {{}}
-     */
-    var instance = {
+	constructor() {
 
-    };
+	}
+}
 
-    return instance;
-
-})();
+module.exports = function() {
+	return new Navigation();
+}
