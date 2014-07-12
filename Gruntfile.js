@@ -282,6 +282,14 @@ module.exports = function (grunt) {
                     }
 
                 }
+            },
+            production: {
+                files: {
+                    './dist/assets/js/app.min.js': ["./src/js/modules/app.js"]
+                },
+                options: {
+                    transform: ["browserify-shim"]
+                }
             }
         },
 
