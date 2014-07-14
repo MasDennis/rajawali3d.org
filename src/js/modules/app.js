@@ -21,6 +21,7 @@ var app = (function(app){
         //get section id from url
         var sectionId = window.location.pathname.split(/\/|\?|&|=|\./g)[1];
 
+        //if we are on the root, set id to 'home'
         if( sectionId === '' ) {
             sectionId = 'home';
         }

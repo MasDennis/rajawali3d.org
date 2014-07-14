@@ -32,6 +32,16 @@ module.exports = function (grunt) {
                 layoutdir: PATHS.SRC + PATHS.TEMPLATES +  'layouts/',
                 partials: PATHS.SRC + PATHS.TEMPLATES + 'partials/**/*.hbs'
             },
+            tutorials: {
+                options: {
+                    ext: '.md',
+                    engine: 'handlebars',
+                    layout: 'markdown-1.hbs'
+                },
+                files: {
+                    'dest/': ['src/content/*.md']
+                }
+            },
             posts: {
                 options: {
 
