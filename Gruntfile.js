@@ -204,19 +204,19 @@ module.exports = function (grunt) {
             options: {
                 force: true,
                 jshintrc:  './.jshintrc',
-                reporter: require('jshint-stylish'),
+                reporter: require('jshint-stylish')
 
             },
             site: {
                 files: [{
-                    cwd: PATHS.SRC + PATHS.JS,
+                    cwd: '/src/' + PATHS.JS,
                     expand: true,
                     src: ['**/*.js', '!' + 'vendor/**/*.js', '!modernizr.js']
                 }]
             },
             assemble: {
                 files: [{
-                    cwd: PATHS.SRC + PATHS.TEMPLATES + 'helpers/',
+                    cwd: './src/' + PATHS.TEMPLATES + 'helpers/',
                     expand: true,
                     src: '**/*.js'
                 }]
@@ -331,8 +331,16 @@ module.exports = function (grunt) {
                 expand: true,
                 files: PATHS.SRC + PATHS.SASS + '**/*.scss',
                 tasks: ['styles']
+            },
+            scripts: {
+                expand: true,
+                files: '**/*.js',
+                tasks: ['scripts'],
+                options: {
+                    spawn: false,
+                    cwd: PATHS.SRC + PATHS.JS
+                }
             }
-
         }
 
     });
@@ -349,7 +357,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('content', ['assemble', 'autoprefixer:content', 'copy:contentImage', 'copy:content']);
 
-    grunt.registerTask('build', ['clean:dist', 'styles', 'fonts', 'root', 'images', 'scripts', 'content','browserify:dev']);
+    grunt.registerTask('build', ['clean:dist', 'styles', 'fonts', 'root', 'images', 'content', 'scripts','browserify:dev']);
     grunt.registerTask('run', ['connect', 'watch']);
     grunt.registerTask('compress', ['useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'clean:useminTidy', 'copy:vendorScripts', 'htmlmin']);
 

@@ -14,17 +14,17 @@ var app = (function(app){
         var sectionId = window.location.pathname.split(/\/|\?|&|=|\./g)[1];
 
         var Section = require( './' + sectionId + '.js' );
-        var section = new Section()
+        var section = new Section();
             section.init();
-    }
+    };
+
     return app;
+
+
 
 })(app || {});
 
-
-$(function(){
-    app.init();
-})
+$( app.init );
 
 
 
