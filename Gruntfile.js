@@ -34,25 +34,18 @@ module.exports = function (grunt) {
             },
             tutorials: {
                 options: {
-                    ext: '.md',
+                    ext: '.html',
                     engine: 'handlebars',
-                    layout: 'markdown-1.hbs'
-                },
-                files: {
-                    'dest/': ['src/content/*.md']
-                }
-            },
-            posts: {
-                options: {
-
+                    layout: 'tutorial.hbs'
                 },
                 files: [{
                     cwd: PATHS.SRC + PATHS.CONTENT,
                     dest: PATHS.DEST,
                     expand: true,
-                    src: ['**/*.hbs']
+                    src: ['**/*.md']
                 }]
             }
+
         },
 
         /* automatically add prefixes to css */
