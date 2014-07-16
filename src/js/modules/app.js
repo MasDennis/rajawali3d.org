@@ -4,10 +4,13 @@
 require('./features.js');
 require('./showcase.js');
 require('./home.js');
+require('./getting-started.js');
 
-var Navigation = require('./navigation.js');
 
 var $ = require('jquery');
+
+
+var Navigation = require('./navigation.js');
 
 var app = (function(app){
 
@@ -30,6 +33,8 @@ var app = (function(app){
         var Section = require( './' + sectionId + '.js' );
         var section = new Section();
             section.init();
+
+
     };
 
     return app;

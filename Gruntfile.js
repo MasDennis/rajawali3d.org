@@ -44,6 +44,21 @@ module.exports = function (grunt) {
                     expand: true,
                     src: ['**/*.md']
                 }]
+            },
+            pages: {
+                options: {
+                    collections: [{
+                        name: 'post',
+                        sortby: 'posted',
+                        sortorder: 'descending'
+                    }]
+                },
+                files: [{
+                    cwd: PATHS.SRC + PATHS.CONTENT,
+                    dest: PATHS.DEST,
+                    expand: true,
+                    src: ['**/*.hbs']
+                }]
             }
 
         },
@@ -235,7 +250,7 @@ module.exports = function (grunt) {
             },
             site: {
                 options: {
-                    style: 'compressed'
+                   /* style: 'compressed'*/
                 },
                 files: [{
                     expand: true,
@@ -280,6 +295,7 @@ module.exports = function (grunt) {
 
                     transform: ["browserify-shim"],
                     watch: true,
+                    inserGlobals: true,
                     bundleOptions: {
                         debug:true
                     }
