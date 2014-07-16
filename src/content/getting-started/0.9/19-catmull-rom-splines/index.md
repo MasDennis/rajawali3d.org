@@ -2,7 +2,7 @@ Bezier path animations can look really nice but they can be a huge pain in the *
 
 Catmull-Rom splines can make your life much easier. This spline is named after two people, one of them being Edwin Catmull who is the founder and president of Pixar Animation Studios. So yeah, it must be good then 
 
-A Catmull-Rom spline consists of two control points and at least two ‘normal’ points. So if you pass in less than four points it will puke all over you. Don’t say I didn’t warn you :O
+A Catmull-Rom spline consists of two control points and at least two 'normal' points. So if you pass in less than four points it will puke all over you. Don't say I didn't warn you :O
 
 All you need to do is create an instance of `CatmullRomPath3D` and call `addPoint()` a couple of times:
 ```
@@ -26,9 +26,9 @@ anim.setOrientToPath(true);
 anim.setTransformable3D(arrow);
 anim.start();
 ```
-Passing `true` to the `setOrientToPath()` method will set the object’s orientation to current path segment.
+Passing `true` to the `setOrientToPath()` method will set the object's orientation to current path segment.
 
-To draw the path you can call `CatmullRomPath3D`’s `calculatePoint()` method to get the interpolated point. Once you’ve filled the `Stack` with `Number3Ds` you can pass it on to the `Line3D` constructor to visualize the spline:
+To draw the path you can call `CatmullRomPath3D`'s `calculatePoint()` method to get the interpolated point. Once you've filled the `Stack` with `Number3Ds` you can pass it on to the `Line3D` constructor to visualize the spline:
 ```
 Stack linePoints = new Stack();
 for (int i = 0; i < 100; i++) {

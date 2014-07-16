@@ -9,7 +9,7 @@ IBoundingVolume boundingBox = myObject.getGeometry().getBoundingBox();
 
 IBoundingVolume boundingSphere = myObject.getGeometry().getBoundingSphere();
 ```
-Both the `BoundingBox` and `BoundingSphere` classes have a `transform()` method that takes the current model’s model matrix as the only parameter. This is needed to translate, rotate and scale the bounding volume.
+Both the `BoundingBox` and `BoundingSphere` classes have a `transform()` method that takes the current model's model matrix as the only parameter. This is needed to translate, rotate and scale the bounding volume.
 ```
 boundingBox.transform(myObject.getModelMatrix());
 ```

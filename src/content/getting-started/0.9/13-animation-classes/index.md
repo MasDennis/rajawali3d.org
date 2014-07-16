@@ -1,8 +1,8 @@
 NOTE: Rajawali's animation system has gone through a major overhaul and some classes have been removed completely. The documentation below has been updated to reflect the new animation system. 
 
-Rajawali's animation classes resemble Android’s View animation classes but they’re not 100% the same. They are now handled by the OpenGL thread in `RajawaliRenderer` and must be registered with the renderer in order to be updated. This makes the animations now thread safe, eliminating the cause of numerous animation related bugs.
+Rajawali's animation classes resemble Android's View animation classes but they're not 100% the same. They are now handled by the OpenGL thread in `RajawaliRenderer` and must be registered with the renderer in order to be updated. This makes the animations now thread safe, eliminating the cause of numerous animation related bugs.
 
-Here’s an overview:
+Here's an overview:
 * `Animation3DQueue`: a sequence of animations
 * `ColorAnimation3D`: animates the vertex color (including alpha) of a `BaseObject3D` instance
 * `EllipticalOrbitAnimation3D`: rotate an object around a specific point, optionally with eccentricity
@@ -10,7 +10,7 @@ Here’s an overview:
 * `ScaleAnimation3D`: scale an object
 * `TranslateAnimation3D`: translate an object
 
-Here’s how a rotate animation is set up:
+Here's how a rotate animation is set up:
 ```
 // -- set up a rotation animation that rotates 90 degrees around the x axis,
 //    180 degrees around the y axis, 270 degrees around the z axis

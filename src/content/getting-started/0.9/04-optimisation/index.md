@@ -1,5 +1,5 @@
 # SERIALIZATION
-There’s an optimization you can use when large models are involved. It’s called serialization. This prevents you from having to load an .obj file and parse it every time the application starts up. It basically writes all the relevant data (vertices, indices, normal, texture coordinates and colors) to a binary file on disk.
+There's an optimization you can use when large models are involved. It's called serialization. This prevents you from having to load an .obj file and parse it every time the application starts up. It basically writes all the relevant data (vertices, indices, normal, texture coordinates and colors) to a binary file on disk.
 
 So the .obj file has to be loaded only once during development. Once the file has loaded you can save it to the sdcard.
 In order to do this you first have to set the permission in AndroidManifest.xml:
@@ -30,7 +30,7 @@ try {
 WIN!
 
 # BATCHING GEOMETRY
-There’s an optimization you can do when you have a lot of objects of the same kind that share the same material. Sphere with a color material for example:
+There's an optimization you can do when you have a lot of objects of the same kind that share the same material. Sphere with a color material for example:
 
 ![Appolonian sphere packing example - many identical objects](http://www.rozengain.com/files/rajawali/rajawali-appolonian.jpg "Appolonian sphere packing example - many identical objects")
 
@@ -40,7 +40,7 @@ Or many cubes sharing the same texture:
 
 Instead of creating a shader program, uploading textures, vertex buffers, etc for each single one of them, you can share all of this so that the number of calls between the CPU and GPU is drastically reduced.
 
-Here’s how to do it:
+Here's how to do it:
 ```
 // -- First create the main object with a material and a texture.
 //     The child objects will be cloned from this object.
@@ -62,6 +62,6 @@ for(int i=0; i<500; i++) {
 	rootCube.addChild(c);
 }
 ```
-As you can see each object can have its own rotation, position and scale. If you’re not using textures you can also change an individual object’s color. Be aware that the latter will create a new buffer which might reduce performance a little (though not significantly).
+As you can see each object can have its own rotation, position and scale. If you're not using textures you can also change an individual object's color. Be aware that the latter will create a new buffer which might reduce performance a little (though not significantly).
 
 Also check Rajawali Tutorial 22: More Optimisation.

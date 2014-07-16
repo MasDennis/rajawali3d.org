@@ -1,10 +1,10 @@
 ![Fog](http://www.rozengain.com/files/rajawali/rajawali-fog.jpg)
 
-So here’s fog. There’s not much to it. The most important thing is to enable fog on the `RajawaliRenderer`:
+So here's fog. There's not much to it. The most important thing is to enable fog on the `RajawaliRenderer`:
 ```
 setFogEnabled(true);
 ```
-It’s important that you do this before creating any materials. If you don’t there will be no fog. This has to do with shader optimisation.
+It's important that you do this before creating any materials. If you don't there will be no fog. This has to do with shader optimisation.
 
 The other fog parameters can be set on the camera:
 ```

@@ -102,7 +102,7 @@ myObject.setColor(0xFF999999);
 myObject.addLight(mLight);
 myObject.addTexture(mTextureManager.addTexture(sphereMap, TextureType.SPHERE_MAP));
 ```
-… or it can be combined with a normal diffuse texture:
+or it can be combined with a normal diffuse texture:
 ```
 SphereMapMaterial material = new SphereMapMaterial();
 material.setSphereMapStrength(.4f);

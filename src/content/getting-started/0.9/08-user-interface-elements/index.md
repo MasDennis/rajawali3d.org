@@ -1,6 +1,6 @@
 You can add user interface elements and layouts on top  of the OpenGL Surface View.
 
-It can be done in the `Activity` and it’s very easy:
+It can be done in the `Activity` and it's very easy:
 ```
 @Override
     public void onCreate(Bundle savedInstanceState) {

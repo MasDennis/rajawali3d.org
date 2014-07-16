@@ -1,4 +1,4 @@
-Very easy :O There’s an extra` mTextureManager.addTexture()` parameter that you can use to indicate that you’re adding a Bump/Normal map.
+Very easy :O There's an extra` mTextureManager.addTexture()` parameter that you can use to indicate that you're adding a Bump/Normal map.
 A material called `BumpmapMaterial` should be used for this:
 ```
 Bitmap diffuseTexture = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.diffuse_texture);
@@ -16,7 +16,7 @@ lightAnim.setRepeatCount(Animation3D.INFINITE);
 lightAnim.setTransformable3D(mLight);
 lightAnim.start();
 ```
-That’s all there is to it. For a full example check out the [RajawaliExamples](https://github.com/MasDennis/RajawaliExamples/tree/master/src/com/monyetmabuk/rajawali/tutorials) project on Github.
+That's all there is to it. For a full example check out the [RajawaliExamples](https://github.com/MasDennis/RajawaliExamples/tree/master/src/com/monyetmabuk/rajawali/tutorials) project on Github.
 
 
 # SIMPLIFIED IMAGE MAPPING

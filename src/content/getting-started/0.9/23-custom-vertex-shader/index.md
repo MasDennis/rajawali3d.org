@@ -1,6 +1,6 @@
-In this tutorial we’ll take a look at how you can create a custom vertex shader. GLSL shaders are a very powerful feature of OpenGL ES 2.0. In tutorial 7 we created a custom fragment shader. This time we’ll manipulate a sphere’s vertex positions using a vertex shader.
+In this tutorial we'll take a look at how you can create a custom vertex shader. GLSL shaders are a very powerful feature of OpenGL ES 2.0. In tutorial 7 we created a custom fragment shader. This time we'll manipulate a sphere's vertex positions using a vertex shader.
 
-First we’ll create a regular sphere and then we’ll attach a custom material to it. To keep things simple we’ll extend the SimpleMaterial class and use its fragment shader. Like so:
+First we'll create a regular sphere and then we'll attach a custom material to it. To keep things simple we'll extend the SimpleMaterial class and use its fragment shader. Like so:
 ```
 public class CustomVertexShaderMaterial extends SimpleMaterial {
 	...
@@ -10,7 +10,7 @@ public class CustomVertexShaderMaterial extends SimpleMaterial {
 		super(mVShader, SimpleMaterial.mFShader);
 	}
 ```
-Because we want the vertices to be animated we’ll use a time parameter. In the shader this will be a uniform:
+Because we want the vertices to be animated we'll use a time parameter. In the shader this will be a uniform:
 ```
 uniform float uTime;
 ```
@@ -34,7 +34,7 @@ public void setTime(float time) {
 	mTime = time;
 }
 ```
-Now on to the vertex shader. We want the vertex position to change through time by using trigonometric functions. This should give a nice organic blob effect. The changed vertex position will consist of the original vertex position plus a normalized vector that’s pointing in the same direction but is affected by trigonometric functions. Its always better explained in code :O Here’s the complete vertex shader:
+Now on to the vertex shader. We want the vertex position to change through time by using trigonometric functions. This should give a nice organic blob effect. The changed vertex position will consist of the original vertex position plus a normalized vector that's pointing in the same direction but is affected by trigonometric functions. Its always better explained in code :O Here's the complete vertex shader:
 ```
 // -- normalized axis vectors. we'll use these to
 //    get the angles
@@ -93,9 +93,9 @@ void main() {
 	vColor = vec4(directionVec, 1.0);
 }
 ```
-Notice that a nice effect can be created by using the normalized direction vector as the current vertex’s color 
+Notice that a nice effect can be created by using the normalized direction vector as the current vertex's color
 
-Here’s what it looks like ([YouTube video](http://www.youtube.com/watch?v=LNKLIfgfjZ4&feature=player_embedded)):
+Here's what it looks like ([YouTube video](http://www.youtube.com/watch?v=LNKLIfgfjZ4&feature=player_embedded)):
 
 ![Vertex Shader Blog](http://www.rozengain.com/files/rajawali/rajawali-vertex-shader-blob.jpg)
 

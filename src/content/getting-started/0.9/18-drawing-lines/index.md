@@ -15,11 +15,11 @@ material.setUseColor(true);
 whirl.setMaterial(material);
 addChild(whirl);
 ```
-It’s easy as that. Using line segments like this you can create nice looking shapes like this:
+It's easy as that. Using line segments like this you can create nice looking shapes like this:
 
 ![Lines](http://www.rozengain.com/files/rajawali/rajawali-lines.jpg)
 
-It’s also relatively easy to draw bezier curves. You first need to create an instance of `BezierPath3D` and then pass in the points and control points:
+It's also relatively easy to draw bezier curves. You first need to create an instance of `BezierPath3D` and then pass in the points and control points:
 ```
 BezierPath3D bezierPath = new BezierPath3D();
 bezierPath.addPoint(new Number3D(0, -4, 0), new Number3D(-2, -4, .2f), new Number3D(4, 4, 4), new Number3D(-2, 4, 4.5f));
@@ -46,7 +46,7 @@ material.setUseColor(true);
 line.setMaterial(material);
 addChild(line);
 ```
-… and here’s the result of this:
+… and here's the result of this:
 
 ![Bezier Lines](http://www.rozengain.com/files/rajawali/rajawali-bezier-curve.jpg)
 

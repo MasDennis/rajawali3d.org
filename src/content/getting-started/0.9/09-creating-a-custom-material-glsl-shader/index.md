@@ -1,12 +1,12 @@
-You can create your own materials quite easily. In this example we’ll create a new material based on the `SimpleMaterial` class. `SimpleMaterial` is the most basic material and doesn’t use any lights.
-We’ll create a custom material that uses a GLSL fragment shader for an old-school plasma effect. It’ll look like [this (YouTube video)](http://www.youtube.com/watch?feature=player_embedded&v=mB1fmSsCk0w).
+You can create your own materials quite easily. In this example we'll create a new material based on the `SimpleMaterial` class. `SimpleMaterial` is the most basic material and doesn't use any lights.
+We'll create a custom material that uses a GLSL fragment shader for an old-school plasma effect. It'll look like [this (YouTube video)](http://www.youtube.com/watch?feature=player_embedded&v=mB1fmSsCk0w).
 
 The first step is to create a new class that extends `SimpleMaterial`:
 ```
 public class CustomMaterial extends SimpleMaterial {
 }
 ```
-Next we’ll create a protected static final String that contains the shader text. I’m not going to explain how GLSL works but if you do a Google search you should find enough quality tutorials.
+Next we'll create a protected static final String that contains the shader text. I'm not going to explain how GLSL works but if you do a Google search you should find enough quality tutorials.
 ```
 protected static final String mCustomFShader =
 		"precision mediump float;" +
@@ -33,7 +33,7 @@ public CustomMaterial() {
 ```
 This will take care of creating the programs and linking.
 
-Now we’ll add a custom parameter to the shader. To make things more interesting we’ll add a time parameter so we can animate our material. This parameter is called `uTime` in the fragment shader. We need to create an extra property to store the handle to this shader parameter:
+Now we'll add a custom parameter to the shader. To make things more interesting we'll add a time parameter so we can animate our material. This parameter is called `uTime` in the fragment shader. We need to create an extra property to store the handle to this shader parameter:
 ```
 protected int muTimeHandle;
 ```

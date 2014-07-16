@@ -1,13 +1,13 @@
 This is the uber-optimisation. Communication between the CPU and the GPU is minimal. It is a bit harder to do though.
-Instead of using the normal `setPosition()`, `setScale()` and `setRotation()` methods you’ll have to write a shader that does this.
+Instead of using the normal `setPosition()`, `setScale()` and `setRotation()` methods you'll have to write a shader that does this.
 
-[Here’s a video of 2000 planes](http://www.youtube.com/watch?feature=player_embedded&v=Iqg4U6yoabg) that are combined into one object but have individual textures and rotations.
+[Here's a video of 2000 planes](http://www.youtube.com/watch?feature=player_embedded&v=Iqg4U6yoabg) that are combined into one object but have individual textures and rotations.
 
-If you would do this the normal way (create 2000 Plane objects with individual textures) your device would melt in your hands. When you do it the way described here, it will run on full speed and make a happy dance. Now that’s a bold promise.
+If you would do this the normal way (create 2000 Plane objects with individual textures) your device would melt in your hands. When you do it the way described here, it will run on full speed and make a happy dance. Now that's a bold promise.
 
-Like I said, this is not an easy optimization if you’re not very familiar with creating your own geometry and shaders. I’ll attempt to explain it anyway. Please post a comment if you have any questions.
+Like I said, this is not an easy optimization if you're not very familiar with creating your own geometry and shaders. I'll attempt to explain it anyway. Please post a comment if you have any questions.
 
-In order to create the geometries for each separate plane we’ll need to create a custom `BaseObject3D`. We are going to create the usual vertex, normal, color and texture coordinates buffers manually. On top of that we’ll create new buffers for the positions and rotations.
+In order to create the geometries for each separate plane we'll need to create a custom `BaseObject3D`. We are going to create the usual vertex, normal, color and texture coordinates buffers manually. On top of that we'll create new buffers for the positions and rotations.
 
 First, create the new class that inherits from `BaseObject3D`:
 ```
@@ -35,7 +35,7 @@ float[] rotationSpeeds = new float[numVertices];
 float[] colors = new float[numVertices * 4];
 int[] indices = new int[numPlanes * 6];
 ```
-Next up is the loop that fills the arrays with all the relevant data. I won’t expand much on this, but it creates all the individual planes (vertices, indices, textures coordinates, normals, random rotations, random positions):
+Next up is the loop that fills the arrays with all the relevant data. I won't expand much on this, but it creates all the individual planes (vertices, indices, textures coordinates, normals, random rotations, random positions):
 ```
 for (int i = 0; i < numPlanes; ++i) {
 	Number3D r = new Number3D(-10f + (Math.random() * 20f), -10 + (Math.random() * 20f), (Math.random() * 80f));
@@ -106,13 +106,13 @@ for (int i = 0; i < numPlanes; ++i) {
 	rotationSpeeds[vIndex + 3] = rotationSpeed;
 }
 ```
-One important thing to note here is how the texture coordinates are being calculated. Instead of using a separate texture for each plane, the textures are combined into a texture atlas. In this case, I’ve put 16 textures into a single texture. Each plane then gets texture coordinates that correspond to one these textures.
+One important thing to note here is how the texture coordinates are being calculated. Instead of using a separate texture for each plane, the textures are combined into a texture atlas. In this case, I've put 16 textures into a single texture. Each plane then gets texture coordinates that correspond to one these textures.
 
 Finally, the usual data can be passed on to the superclass:
 ```
 setData(vertices, normals, textureCoords, colors, indices);
 ```
-Since we have custom position and rotation speed arrays we’ll need to create two Buffers and obtain a handle from the OpenGL context:
+Since we have custom position and rotation speed arrays we'll need to create two Buffers and obtain a handle from the OpenGL context:
 ```
 mPlanePositions = ByteBuffer.allocateDirect(planePositions.length * Geometry3D.FLOAT_SIZE_BYTES).order(ByteOrder.nativeOrder()).asFloatBuffer();
 mPlanePositions.put(planePositions).position(0);
@@ -126,9 +126,9 @@ GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, 0);
 mRotationSpeedsBufferHandle = mGeometry.createBuffer(BufferType.FLOAT_BUFFER, mRotationSpeeds, GLES20.GL_ARRAY_BUFFER);
 GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, 0);
 ```
-We’ll also have to write a custom shader. Creating a custom shader is the topic of this tutorial so please read that first.
+We'll also have to write a custom shader. Creating a custom shader is the topic of this tutorial so please read that first.
 
-In this shader we’ll need to add two new attributes to the vertex shader:
+In this shader we'll need to add two new attributes to the vertex shader:
 ```
 attribute vec4 aPlanePosition;
 attribute float aRotationSpeed;
@@ -156,7 +156,7 @@ vec4 rotPos = aPosition * mz * my;
 // -- now translate it to the plane position
 gl_Position = uMVPMatrix * (rotPos + aPlanePosition);
 ```
-It’s more work than `Object3D.setRenderChildrenAsBatch()` but the performance gain is significant.
+It's more work than `Object3D.setRenderChildrenAsBatch()` but the performance gain is significant.
 
 The full source code:
 

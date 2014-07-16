@@ -1,4 +1,4 @@
-All the files can been found in the [Rajawali Example project](https://github.com/MasDennis/RajawaliExamples) but it’ll outline the most important things here.
+All the files can been found in the [Rajawali Example project](https://github.com/MasDennis/RajawaliExamples) but it'll outline the most important things here.
 
 In this particle system class we add another `FloatBuffer` in which the velocity vectors are stored for each particle. The position, texture coords, normals, etc for each individual particle are stored in arrays and the converter to either `FloatBuffers` or `ShortBuffers`:
 ```
@@ -49,7 +49,7 @@ mFriction = new Number3D(.95f, .95f, .95f);
 
 setData(vertices, normals, textureCoords, colors, indices);
 ```
-Then its important to override the render() method and update some of the `ParticleMaterial`’s properties:
+Then its important to override the render() method and update some of the `ParticleMaterial`'s properties:
 ```
 @Override
 public void render(Camera camera, float[] projMatrix, float[] vMatrix,

@@ -29,8 +29,8 @@ For instance, we can use the vertex buffer values to position the spikes:
 ```
 spike.setPosition(vertBuffer.get(i), vertBuffer.get(i+1), vertBuffer.get(i+2));
 ```
-This way the spikes are nicely distributed across the sphere. But they’re all pointing in the same direction.
-Next, let’s set up the orientation so that they face the same direction as the normal:
+This way the spikes are nicely distributed across the sphere. But they're all pointing in the same direction.
+Next, let's set up the orientation so that they face the same direction as the normal:
 ```
 // -- get the normal so we can orient the spike to the normal
 Number3D normal = new Number3D(-normBuffer.get(i), normBuffer.get(i+1), normBuffer.get(i+2));
