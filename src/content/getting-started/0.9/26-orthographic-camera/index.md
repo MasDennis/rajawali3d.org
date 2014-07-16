@@ -1,3 +1,6 @@
+---
+title: Orthographic camera
+---
 The type of camera that is used by Rajawali as the default one is a perspective camera. With this type of camera parallel lines appear to converge in the horizon.
 An orthographic camera however will render objects uniformly without a sense of perspective.
 

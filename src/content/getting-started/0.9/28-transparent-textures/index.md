@@ -1,3 +1,6 @@
+---
+title: Transparent textures
+---
 Transparent textures are very much supported by Rajawali but there are a few caveats.
 Merely assigning a .png texture to your object won't give you the desired result:
 ``` java

@@ -1,3 +1,6 @@
+---
+title: Animated sprites
+---
 [YouTube video demonstrating Animated Sprites](http://www.youtube.com/watch?feature=player_embedded&v=bARIz7iDHgc)
 
 Sprite sheets are basically separate animation frames tiled in a single texture. The shader has logic that loops through these frames at a specified speed.

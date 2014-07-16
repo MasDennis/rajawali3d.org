@@ -1,3 +1,6 @@
+---
+title: Skeleton animation
+---
 These are a few quick notes about skeletal animation for now. A full tutorial is in the making.
 
 Rajawali can import [.md5anim and .md5mesh files](http://tfc.duke.free.fr/coding/md5-specs-en.html). These file types were originally used in Doom 3. Collada and FBX skeletal animation aren't supported. Mostly because these files can be enormous.

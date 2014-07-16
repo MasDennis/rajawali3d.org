@@ -1,3 +1,6 @@
+---
+title: Particles
+---
 All the files can been found in the [Rajawali Example project](https://github.com/MasDennis/RajawaliExamples) but it'll outline the most important things here.
 
 In this particle system class we add another `FloatBuffer` in which the velocity vectors are stored for each particle. The position, texture coords, normals, etc for each individual particle are stored in arrays and the converter to either `FloatBuffers` or `ShortBuffers`:

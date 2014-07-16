@@ -1,3 +1,6 @@
+---
+title: Video material
+---
 `VideoMaterial`. **This only works from API level 15 and upwards**. Thanks to Lubomir Panak (@drakh) for this contribution.
 
 This uses the `SurfaceTexture` class which is included in API Level 15 (Android 4.0.3).

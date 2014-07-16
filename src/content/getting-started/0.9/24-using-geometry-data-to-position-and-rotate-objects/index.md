@@ -1,3 +1,6 @@
+---
+title: Using geometry data to position and rotate objects
+---
 This is a small example that shows how to access geometry data and how to use it to position and rotate objects.
 
 In this example I will create a sphere and use its vertices and normals. I will place a spike at each vertex position and then I will use the corresponding normal to rotate the spike so that it faces the same direction as the vertex normal.

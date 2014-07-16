@@ -1,3 +1,6 @@
+---
+title: 2D renderer
+---
 With `Camera2D` you can add a 2D camera to the scene, add a plane (width 1, height 1) and then add a custom material to it and do some GLSL 2D funkiness.
 
 Check it out:

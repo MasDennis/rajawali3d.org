@@ -1,3 +1,6 @@
+---
+title: More optimisation
+---
 This is the uber-optimisation. Communication between the CPU and the GPU is minimal. It is a bit harder to do though.
 Instead of using the normal `setPosition()`, `setScale()` and `setRotation()` methods you'll have to write a shader that does this.
 

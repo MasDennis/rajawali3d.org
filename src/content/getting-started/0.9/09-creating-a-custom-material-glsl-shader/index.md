@@ -1,3 +1,6 @@
+---
+title: Creating a custom material GLSL shader
+---
 You can create your own materials quite easily. In this example we'll create a new material based on the `SimpleMaterial` class. `SimpleMaterial` is the most basic material and doesn't use any lights.
 We'll create a custom material that uses a GLSL fragment shader for an old-school plasma effect. It'll look like [this (YouTube video)](http://www.youtube.com/watch?feature=player_embedded&v=mB1fmSsCk0w).
 

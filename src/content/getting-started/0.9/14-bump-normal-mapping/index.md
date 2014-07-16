@@ -1,3 +1,6 @@
+---
+title: Bump normal mapping
+---
 Very easy :O There's an extra` mTextureManager.addTexture()` parameter that you can use to indicate that you're adding a Bump/Normal map.
 A material called `BumpmapMaterial` should be used for this:
 ```

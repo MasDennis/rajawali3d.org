@@ -1,3 +1,6 @@
+---
+title: Using canvas for textures
+---
 Canvas can be used to modify mutable bitmaps giving you a convenient way to modify or create new textures at any time.
 
 Canvas must be provided a mutable bitmap for this to work. To create a mutable bitmap simply use the static method in the bitmap class.

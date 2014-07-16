@@ -1,3 +1,6 @@
+---
+title: Catmull rom splines
+---
 Bezier path animations can look really nice but they can be a huge pain in the *** when you need to construct them.
 
 Catmull-Rom splines can make your life much easier. This spline is named after two people, one of them being Edwin Catmull who is the founder and president of Pixar Animation Studios. So yeah, it must be good then 

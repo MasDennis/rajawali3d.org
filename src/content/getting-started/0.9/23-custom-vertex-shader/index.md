@@ -1,3 +1,6 @@
+---
+title: Custom vertex shader
+---
 In this tutorial we'll take a look at how you can create a custom vertex shader. GLSL shaders are a very powerful feature of OpenGL ES 2.0. In tutorial 7 we created a custom fragment shader. This time we'll manipulate a sphere's vertex positions using a vertex shader.
 
 First we'll create a regular sphere and then we'll attach a custom material to it. To keep things simple we'll extend the SimpleMaterial class and use its fragment shader. Like so:

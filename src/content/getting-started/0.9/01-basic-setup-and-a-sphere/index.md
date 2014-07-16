@@ -1,3 +1,6 @@
+---
+title: Basic setup and creating a sphere
+---
 Clone, or download a copy of the Rajawali source code. Make sure you're using `v0.9`. If you cloned, you can do this with `$ git checkout v0.9`.
 
 Import the Rajawali project into Eclipse (Go to [this page](https://github.com/MasDennis/Rajawali/wiki/Importing-Rajawali-and-RajawaliExamples) for a comprehensive guide about how to set up Rajawali..)

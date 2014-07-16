@@ -1,3 +1,6 @@
+---
+title: Skybox
+---
 You can set the skybox images in your renderer class. It is defined in `RajawaliRenderer`.
 Make sure you put six images in /res/drawable-nodpi/ and pass them to the `setSkybox()` method:
 ```

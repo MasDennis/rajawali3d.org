@@ -1,3 +1,6 @@
+---
+title: Collision detection
+---
 Rajawali supports simple collision detection using bounding boxes and bounding spheres. The `Geometry3D` class contains two methods that can be used to retrieve the bounding volumes:
 ```
 // -- myObject is of type BaseObject3D

@@ -1,3 +1,6 @@
+---
+title: Importing .obj files
+---
 The basics have been covered in an earlier tutorial but more info about this was requested. There are some specific things to take into account when dealing with .obj files.
 
 The most important thing is that the model should be triangulated. Rajawali doesn't accept quads, only tris. In Blender, this is an option you can select in the exporter. In a program like MeshLab, this is done automatically.

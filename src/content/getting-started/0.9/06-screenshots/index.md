@@ -1,3 +1,6 @@
+---
+title: Screenshots
+---
 Source discussion : https://github.com/MasDennis/Rajawali/issues/478
 
 Taken from this SO question, where someone provides some code to extract a screenshot from an opengl renderer:

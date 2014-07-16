@@ -1,4 +1,7 @@
-NOTE: Rajawali's animation system has gone through a major overhaul and some classes have been removed completely. The documentation below has been updated to reflect the new animation system. 
+---
+title: Animation classes
+---
+NOTE: Rajawali's animation system has gone through a major overhaul and some classes have been removed completely. The documentation below has been updated to reflect the new animation system.
 
 Rajawali's animation classes resemble Android's View animation classes but they're not 100% the same. They are now handled by the OpenGL thread in `RajawaliRenderer` and must be registered with the renderer in order to be updated. This makes the animations now thread safe, eliminating the cause of numerous animation related bugs.
 

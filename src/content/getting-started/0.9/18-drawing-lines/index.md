@@ -1,3 +1,6 @@
+---
+title: Drawing lines
+---
 A line in Rajawali consists of one or more line segments. First you need to specify all the points that make up the line. Like so:
 ```
 Stack points = new Stack();

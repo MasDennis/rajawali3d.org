@@ -1,3 +1,6 @@
+---
+title: Optimisation
+---
 # SERIALIZATION
 There's an optimization you can use when large models are involved. It's called serialization. This prevents you from having to load an .obj file and parse it every time the application starts up. It basically writes all the relevant data (vertices, indices, normal, texture coordinates and colors) to a binary file on disk.
 

@@ -1,3 +1,6 @@
+---
+title: Creating a day dream
+---
 # Rajawali Day Dreams
 Day dreams are actually quite simple. The Rajawali Day Dream implementation only requires passing an implementation and then setting up the boilerplate Android xml.
 

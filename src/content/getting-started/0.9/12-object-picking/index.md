@@ -1,3 +1,6 @@
+---
+title: Object picking
+---
 Here's how to do object picking.
 First make sure your activity implements `OnTouchListener`. Then register the listener and override the `onTouch` method:
 ```

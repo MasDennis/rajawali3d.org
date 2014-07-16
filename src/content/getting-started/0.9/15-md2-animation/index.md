@@ -1,3 +1,6 @@
+---
+title: MD2 animation
+---
 MD2 animations were originally used in Quake 2 and contain keyframe per-vertex animations. 3D programs like Blender are able to export to this format.
 
 MD2 files can be imported as follows:

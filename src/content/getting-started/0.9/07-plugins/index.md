@@ -1,3 +1,6 @@
+---
+title: Plugins
+---
 Rajawali now supports plugins allowing for complex effects to be rendered surpassing the limiting Post Processing implementation. For more details you can visit [Andrew J's](https://github.com/AndrewJo) blog and use the below example as reference.
 
 [Introducing Plugin Architecture For Rajawali](http://www.andrewjo.com/blog/mobile-development/introducing-plugin-architecture-for-rajawali)

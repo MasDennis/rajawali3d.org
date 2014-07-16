@@ -1,3 +1,6 @@
+---
+title: Fog
+---
 ![Fog](http://www.rozengain.com/files/rajawali/rajawali-fog.jpg)
 
 So here's fog. There's not much to it. The most important thing is to enable fog on the `RajawaliRenderer`:

@@ -8,9 +8,7 @@ var GettingStarted = function() {
 
 
     this.init = function() {
-        $('pre code').each(function(i, block) {
-            hljs.highlightBlock(block);
-        });
+        hljs.initHighlightingOnLoad();
     };
 
 };

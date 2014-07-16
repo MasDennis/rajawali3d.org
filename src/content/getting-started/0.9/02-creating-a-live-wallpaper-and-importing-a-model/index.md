@@ -1,4 +1,7 @@
-The basics of Android live wallpapers are [well documented](http://www.vogella.com/articles/AndroidLiveWallpaper/article.html) so there's no need to go over that in this tutorial. 
+---
+title: Creating a live wallpaper
+---
+The basics of Android live wallpapers are [well documented](http://www.vogella.com/articles/AndroidLiveWallpaper/article.html) so there's no need to go over that in this tutorial.
 
 There is a template project for Rajawali live wallpapers which is meant to make your life easier. You can import it into Eclipse by [downloading it from this page](https://github.com/MasDennis/RajawaliWallpaperTemplate).
 
