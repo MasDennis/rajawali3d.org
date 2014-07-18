@@ -1,5 +1,8 @@
 ---
 title: Basic setup and creating a sphere
+categories: "tutorials"
+tags:
+- bang
 ---
 Clone, or download a copy of the Rajawali source code. Make sure you're using `v0.9`. If you cloned, you can do this with `$ git checkout v0.9`.
 

@@ -1,1 +1,9 @@
-schnitze
+---
+layout: tutorials-index.hbs
+---
+{{#each  pages }}
+	<ul class="tutorials-list">
+        <li><a href="{{transformInternalLink this.dest}}">{{data.title}}</a></li>
+	</ul>
+
+{{/each  }}

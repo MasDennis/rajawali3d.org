@@ -1,5 +1,9 @@
 ---
-title: Creating a live wallpaper
+title: "Creating a live wallpaper"
+section: "tutorials"
+tags:
+- tutorial
+- 0.9
 ---
 The basics of Android live wallpapers are [well documented](http://www.vogella.com/articles/AndroidLiveWallpaper/article.html) so there's no need to go over that in this tutorial.
 

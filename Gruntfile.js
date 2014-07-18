@@ -26,6 +26,7 @@ module.exports = function (grunt) {
 
         assemble: {
             options: {
+                debug:true,
                 data: PATHS.SRC + PATHS.CONTENT + 'data/*.json',
                 helpers: PATHS.SRC + PATHS.TEMPLATES + 'helpers/**/*.js',
                 layout: 'index.hbs',
@@ -36,19 +37,22 @@ module.exports = function (grunt) {
                 options: {
                     ext: '.html',
                     engine: 'handlebars',
-                    layout: 'tutorial.hbs'
+                    layout: 'tutorial.hbs',
+                    collections: [{
+                        name: 'tutorials'
+                    }]
                 },
                 files: [{
-                    cwd: PATHS.SRC + PATHS.CONTENT,
-                    dest: PATHS.DEST,
+                    cwd: PATHS.SRC + PATHS.CONTENT +'getting-started/',
+                    dest: PATHS.DEST + 'getting-started/',
                     expand: true,
-                    src: ['**/*.md']
+                    src: ['**/*.md', 'index.hbs']
                 }]
             },
             pages: {
                 options: {
                     collections: [{
-                        name: 'post',
+                        name: ['tutorials'],
                         sortby: 'posted',
                         sortorder: 'descending'
                     }]
@@ -57,7 +61,7 @@ module.exports = function (grunt) {
                     cwd: PATHS.SRC + PATHS.CONTENT,
                     dest: PATHS.DEST,
                     expand: true,
-                    src: ['**/*.hbs']
+                    src: ['**/*.hbs', '!getting-started/index.hbs']
                 }]
             }
 
@@ -370,6 +374,7 @@ module.exports = function (grunt) {
     grunt.registerTask('root', ['copy:root']);
     grunt.registerTask('fonts', ['copy:fonts']);
     grunt.registerTask('images', ['copy:image']);
+
 
     grunt.registerTask('styles', ['sass', 'autoprefixer:site']);
     grunt.registerTask('scripts', ['jshint']);

@@ -1,5 +1,8 @@
 ---
 title: Materials
+tags:
+- tutorial
+- 0.9
 ---
 # SIMPLE MATERIAL
 A basic material is just a color or a texture without any lighting enabled. This renders a green cube:
