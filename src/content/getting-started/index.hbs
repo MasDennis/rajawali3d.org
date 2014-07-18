@@ -1,9 +1,21 @@
 ---
 layout: tutorials-index.hbs
 ---
-{{#each  pages }}
-	<ul class="tutorials-list">
-        <li><a href="{{transformInternalLink this.dest}}">{{data.title}}</a></li>
-	</ul>
+<h2>v 0.9 </h2>
+<ul class="tutorials-list">
+	{{#each  pages }}
+		{{#contains this.dest "0.9"}}
+			<li><a href="{{transformInternalLink this.dest}}">{{data.title}}</a></li>
+		{{/contains}}
+	{{/each  }}
+</ul>
 
-{{/each  }}
+
+<h2>v 1.0 </h2>
+<ul class="tutorials-list">
+	{{#each  pages }}
+		{{#contains dest "1.0"}}
+			<li><a href="{{transformInternalLink this.dest}}">{{data.title}}</a></li>
+	   {{/contains}}
+	{{/each  }}
+</ul>

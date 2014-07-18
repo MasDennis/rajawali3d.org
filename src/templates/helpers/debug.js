@@ -4,7 +4,7 @@ module.exports.register = function (Handlebars) {
 
 
     /* chain Handlebars helpers together */
-    Handlebars.registerHelper('transformInternalLink', function (url) {
+    Handlebars.registerHelper('debug', function (url) {
         var match = '/dist'
         url = url.substring( url.indexOf(match) + match.length, url.length )
         return url;
